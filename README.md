@@ -8,7 +8,7 @@
 bb 你要的文字
 ```
 出现下拉框，选择一个，按下回车，等待数秒就可以了（取决于网速）
-![预览](./how.png)
+![预览](https://github.com/guissy/czxiu_alfred/raw/master/how.png)
 
 
 ## 7种表情如下
