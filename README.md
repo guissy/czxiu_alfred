@@ -1,0 +1,2 @@
+# czxiu_alfred
+彩字秀是一个文字表情图制作网站，以此为基础做了一个Alfred插件，用到了python2和apple script

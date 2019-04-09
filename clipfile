@@ -1,0 +1,6 @@
+#!/usr/bin/osascript
+on run argv
+    tell application "Finder" to set theFile to ("Macintosh HD:private:tmp:" & item 1 of argv)
+    set the clipboard to (read (theFile as alias) as TIFF picture)
+    delay 0.2
+end
