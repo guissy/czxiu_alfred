@@ -255,12 +255,15 @@ elif type == 'forest_backboard':
     # 森林黑板
     # https://www.czxiu.com/cz/diy-696.html#main
     _id = 1091
+    s2 = ''
+    for i in range(0, len(s1), 5):
+        s2 += s1[i:i+5]+'\r\n'
     params = {
         '_csrf': csrf,
         'ZDiyForm[xpos]': 82,
         'ZDiyForm[ypos]': 30,
         'ZDiyForm[image]': '/assets/7bbc7da5/material/diy/old/696.gif',
-        'ZDiyForm[text]': s1,
+        'ZDiyForm[text]': s2,
         'ZDiyForm[font]': 'fzyt.ttf',
         'ZDiyForm[color]': '#ffffff',
         'ZDiyForm[color2]': '',
