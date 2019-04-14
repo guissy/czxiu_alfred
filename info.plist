@@ -6,6 +6,8 @@
 	<string>com.gui.zi.shu.shu</string>
 	<key>connections</key>
 	<dict>
+		<key>6F3EA5F1-29FD-4038-94A7-D55CB9516538</key>
+		<array/>
 		<key>86A1B35C-DA60-4893-A356-F246564D848C</key>
 		<array>
 			<dict>
@@ -359,6 +361,81 @@ sys.stdout.write('生成的表情到剪切板了')</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>tm</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>import sys
+import datetime
+from workflow import web, ICON_CLOCK, Workflow
+
+query = sys.argv[1]
+
+def timestamp_datetime(ts):
+    if isinstance(ts, (int, float, str)):
+        try:
+            ts = int(ts)
+        except ValueError:
+            raise
+
+        if len(str(ts)) == 13:
+            ts = int(ts / 1000)
+        if len(str(ts)) != 10:
+            # raise ValueError
+            pass
+    else:
+        raise ValueError()
+
+    return datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
+
+t = timestamp_datetime(query)
+wf = Workflow()
+wf.add_item(title=t,
+            valid=True,
+            icon=ICON_CLOCK)
+wf.send_feedback()</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>时间戳转换</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>6F3EA5F1-29FD-4038-94A7-D55CB9516538</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>Keywords are one of Alfred's most commonly used and most useful ways of launching actions. Set a keyword and connect it to the action(s) you want to perform.
@@ -366,6 +443,13 @@ sys.stdout.write('生成的表情到剪切板了')</string>
 Type your keyword into Alfred, followed by your input text if needed, and you'll be on your way to boosting your productivity!</string>
 	<key>uidata</key>
 	<dict>
+		<key>6F3EA5F1-29FD-4038-94A7-D55CB9516538</key>
+		<dict>
+			<key>xpos</key>
+			<integer>50</integer>
+			<key>ypos</key>
+			<integer>190</integer>
+		</dict>
 		<key>86A1B35C-DA60-4893-A356-F246564D848C</key>
 		<dict>
 			<key>xpos</key>
